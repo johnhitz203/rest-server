@@ -14,9 +14,11 @@ defmodule RestServerWeb.Router do
   end
 
   scope "/", RestServerWeb do
-    pipe_through :browser
+    pipe_through :api
 
     get "/", PageController, :index
+
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.
